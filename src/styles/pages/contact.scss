@@ -1,0 +1,59 @@
+@use '../mixins' as mixins;
+
+.contactPage
+{
+  padding: var(--spacing-2xl) 0;
+
+  &__header
+  {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  &__title
+  {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary-color);
+    margin-bottom: var(--spacing-md);
+  }
+
+  &__subtitle
+  {
+    color: var(--text-secondary-color);
+    font-size: var(--font-size-lg);
+  }
+
+  &__container
+  {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+
+    @include mixins.responsive(lg)
+    {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__form
+  {
+    @include mixins.flexColumn;
+    gap: var(--spacing-lg);
+  }
+
+  &__info
+  {
+    @include mixins.flexColumn;
+    gap: var(--spacing-lg);
+    background-color: var(--surface-color);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+  }
+
+  &__contactItem
+  {
+    @include mixins.flexCenter;
+    gap: var(--spacing-md);
+  }
+}

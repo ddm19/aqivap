@@ -1,0 +1,30 @@
+@use '../mixins' as mixins;
+
+.navigation
+{
+    @include mixins.flexCenter;
+    gap: var(--spacing-lg);
+
+    @include mixins.responsive(md)
+    {
+        gap: var(--spacing-xl);
+    }
+
+    &__link
+    {
+        color: var(--text-primary-color);
+        text-decoration: none;
+        font-weight: var(--font-weight-medium);
+        transition: color 0.2s ease-in-out;
+
+        &:hover
+        {
+            color: var(--primary-color);
+        }
+
+        &--active
+        {
+            color: var(--primary-color);
+        }
+    }
+}

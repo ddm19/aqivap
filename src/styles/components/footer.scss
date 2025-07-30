@@ -1,0 +1,65 @@
+@use '../mixins' as mixins;
+
+.footer {
+  background-color: var(--text-primary-color);
+  color: white;
+  padding: var(--spacing-xl) 0;
+  
+  @include mixins.responsive(md) {
+    padding: var(--spacing-2xl) 0;
+  }
+  
+  &__container {
+    @include mixins.flexColumn;
+    gap: var(--spacing-lg);
+    
+    @include mixins.responsive(md) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+  
+  &__section {
+    @include mixins.flexColumn;
+    gap: var(--spacing-sm);
+    
+    @include mixins.responsive(md) {
+      flex: 1;
+      max-width: 300px;
+    }
+  }
+  
+  &__title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  &__link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    
+    &:hover {
+      color: white;
+    }
+  }
+  
+  &__text {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+  }
+  
+  &__bottom {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    
+    @include mixins.responsive(md) {
+      text-align: left;
+    }
+  }
+} 

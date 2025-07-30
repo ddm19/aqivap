@@ -1,0 +1,37 @@
+@use '../mixins' as mixins;
+
+.checkoutPage {
+  padding: var(--spacing-2xl) 0;
+  
+  &__header {
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  &__title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary-color);
+  }
+  
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    
+    @include mixins.responsive(lg) {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+  
+  &__form {
+    @include mixins.flexColumn;
+    gap: var(--spacing-lg);
+  }
+  
+  &__summary {
+    background-color: var(--surface-color);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    height: fit-content;
+  }
+}

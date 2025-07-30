@@ -1,0 +1,18 @@
+@use './styles/mixins' as mixins;
+
+.app
+{
+  min-height: 100vh;
+  @include mixins.flexColumn;
+}
+
+.app__main
+{
+  flex: 1;
+  padding-top: var(--header-height);
+
+  @include mixins.responsive(md)
+  {
+    padding-top: calc(var(--header-height) + 0.5rem);
+  }
+}

@@ -1,0 +1,58 @@
+@use '../mixins' as mixins;
+
+.productDetailPage {
+  padding: var(--spacing-2xl) 0;
+  
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    
+    @include mixins.responsive(lg) {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-2xl);
+    }
+  }
+  
+  &__image {
+    @include mixins.flexCenter;
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius-lg);
+    min-height: 300px;
+    
+    @include mixins.responsive(md) {
+      min-height: 400px;
+    }
+    
+    @include mixins.responsive(lg) {
+      min-height: 500px;
+    }
+  }
+  
+  &__content {
+    @include mixins.flexColumn;
+    gap: var(--spacing-lg);
+  }
+  
+  &__title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary-color);
+  }
+  
+  &__price {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color);
+  }
+  
+  &__description {
+    color: var(--text-secondary-color);
+    line-height: 1.6;
+  }
+  
+  &__actions {
+    @include mixins.flexCenter;
+    gap: var(--spacing-md);
+  }
+}

@@ -1,0 +1,88 @@
+@use '../mixins' as mixins;
+
+.header
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  background-color: var(--background-color);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1000;
+  @include mixins.flexBetween;
+  padding: 0 var(--spacing-md);
+
+  @include mixins.responsive(md)
+  {
+    height: calc(var(--header-height) + 0.5rem);
+  }
+
+  @include mixins.responsive(lg)
+  {
+    padding: 0 var(--spacing-xl);
+  }
+
+  &__logo
+  {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color);
+    text-decoration: none;
+
+    @include mixins.responsive(md)
+    {
+      font-size: var(--font-size-2xl);
+    }
+  }
+
+  &__nav
+  {
+    display: none;
+
+    @include mixins.responsive(md)
+    {
+      display: flex;
+      gap: var(--spacing-lg);
+    }
+  }
+
+  &__navLink
+  {
+    color: var(--text-primary-color);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    transition: color 0.2s ease-in-out;
+
+    &:hover
+    {
+      color: var(--primary-color);
+    }
+
+    &--active
+    {
+      color: var(--primary-color);
+    }
+  }
+
+  &__actions
+  {
+    @include mixins.flexCenter;
+    gap: var(--spacing-sm);
+
+    @include mixins.responsive(md)
+    {
+      gap: var(--spacing-md);
+    }
+  }
+
+  &__mobileMenu
+  {
+    display: block;
+
+    @include mixins.responsive(md)
+    {
+      display: none;
+    }
+  }
+}

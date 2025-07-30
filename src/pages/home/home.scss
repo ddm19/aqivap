@@ -1,0 +1,309 @@
+@use '../../styles/mixins' as mixins;
+
+.homePage
+{
+
+  // Hero Section
+  &__hero
+  {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1d4ed8 100%);
+    color: white;
+    padding: var(--spacing-2xl) 0;
+    text-align: center;
+
+    @include mixins.responsive(md)
+    {
+      padding: var(--spacing-3xl) 0;
+    }
+
+    @include mixins.responsive(lg)
+    {
+      padding: calc(var(--spacing-3xl) * 2) 0;
+    }
+  }
+
+  &__heroContent
+  {
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+
+  &__heroTitle
+  {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+
+    @include mixins.responsive(md)
+    {
+      font-size: var(--font-size-4xl);
+    }
+
+    @include mixins.responsive(lg)
+    {
+      font-size: 3.5rem;
+    }
+  }
+
+  &__heroSubtitle
+  {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xl);
+    opacity: 0.9;
+    line-height: 1.6;
+
+    @include mixins.responsive(md)
+    {
+      font-size: var(--font-size-xl);
+    }
+  }
+
+  &__heroActions
+  {
+    @include mixins.flexCenter;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+
+    @include mixins.responsive(md)
+    {
+      gap: var(--spacing-lg);
+    }
+  }
+
+  // Categories Section
+  &__categories
+  {
+    padding: var(--spacing-2xl) 0;
+    background-color: var(--surface-color);
+  }
+
+  &__sectionTitle
+  {
+    text-align: center;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-xl);
+    color: var(--text-primary-color);
+
+    @include mixins.responsive(md)
+    {
+      font-size: var(--font-size-3xl);
+      margin-bottom: var(--spacing-2xl);
+    }
+  }
+
+  &__categoryGrid
+  {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+
+    @include mixins.responsive(md)
+    {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-xl);
+    }
+
+    @include mixins.responsive(lg)
+    {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__categoryCard
+  {
+    background-color: var(--background-color);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease-in-out;
+
+    &:hover
+    {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    h3
+    {
+      font-size: var(--font-size-xl);
+      font-weight: var(--font-weight-semibold);
+      margin: var(--spacing-md) 0 var(--spacing-sm);
+      color: var(--text-primary-color);
+    }
+
+    p
+    {
+      color: var(--text-secondary-color);
+      margin-bottom: var(--spacing-lg);
+      line-height: 1.6;
+    }
+  }
+
+  &__categoryIcon
+  {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  // Featured Products Section
+  &__featured
+  {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  &__productGrid
+  {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+
+    @include mixins.responsive(md)
+    {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-xl);
+    }
+
+    @include mixins.responsive(lg)
+    {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__productImage
+  {
+    width: 100%;
+    height: 12rem;
+    background-color: var(--surface-color);
+    @include mixins.flexCenter;
+
+    @include mixins.responsive(md)
+    {
+      height: 14rem;
+    }
+
+    @include mixins.responsive(lg)
+    {
+      height: 16rem;
+    }
+  }
+
+  &__productPlaceholder
+  {
+    color: var(--text-secondary-color);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+  }
+
+  &__productPrice
+  {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color);
+  }
+
+  &__viewAllContainer
+  {
+    text-align: center;
+  }
+
+  // About Section
+  &__about
+  {
+    padding: var(--spacing-2xl) 0;
+    background-color: var(--surface-color);
+  }
+
+  &__aboutContent
+  {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+
+    @include mixins.responsive(lg)
+    {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-2xl);
+    }
+  }
+
+  &__aboutText
+  {
+    p
+    {
+      margin-bottom: var(--spacing-md);
+      line-height: 1.7;
+    }
+  }
+
+  &__aboutImage
+  {
+    @include mixins.flexCenter;
+  }
+
+  &__aboutPlaceholder
+  {
+    width: 100%;
+    height: 20rem;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius-lg);
+    @include mixins.flexCenter;
+    color: var(--text-secondary-color);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    box-shadow: var(--shadow-md);
+
+    @include mixins.responsive(md)
+    {
+      height: 24rem;
+    }
+
+    @include mixins.responsive(lg)
+    {
+      height: 28rem;
+    }
+  }
+
+  // Contact Section
+  &__contact
+  {
+    padding: var(--spacing-2xl) 0;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #475569 100%);
+    color: white;
+    text-align: center;
+  }
+
+  &__contactContent
+  {
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+
+  &__contactContent .homePage__sectionTitle
+  {
+    color: white;
+  }
+
+  &__contactContent .textBody
+  {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-xl);
+    font-size: var(--font-size-lg);
+  }
+
+  &__contactActions
+  {
+    @include mixins.flexCenter;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+
+    @include mixins.responsive(md)
+    {
+      gap: var(--spacing-lg);
+    }
+  }
+}

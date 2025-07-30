@@ -1,0 +1,27 @@
+@use '../mixins' as mixins;
+
+.rating {
+  @include mixins.flexCenter;
+  gap: var(--spacing-xs);
+  
+  &__star {
+    color: var(--border-color);
+    font-size: var(--font-size-lg);
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    
+    &--filled {
+      color: var(--accent-color);
+    }
+    
+    &:hover {
+      color: var(--accent-color);
+    }
+  }
+  
+  &__text {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary-color);
+    margin-left: var(--spacing-xs);
+  }
+}

@@ -1,0 +1,59 @@
+@use '../mixins' as mixins;
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  @include mixins.flexCenter;
+  padding: var(--spacing-md);
+  
+  &__content {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-xl);
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  &__header {
+    @include mixins.flexBetween;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  &__title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary-color);
+  }
+  
+  &__close {
+    background: none;
+    border: none;
+    font-size: var(--font-size-xl);
+    cursor: pointer;
+    color: var(--text-secondary-color);
+    padding: var(--spacing-xs);
+    
+    &:hover {
+      color: var(--text-primary-color);
+    }
+  }
+  
+  &__body {
+    padding: var(--spacing-lg);
+  }
+  
+  &__footer {
+    @include mixins.flexBetween;
+    padding: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+    gap: var(--spacing-md);
+  }
+} 

@@ -1,0 +1,102 @@
+@use '../mixins' as mixins;
+
+.productCard {
+  @include mixins.cardBase;
+  @include mixins.flexColumn;
+  height: 100%;
+  
+  @include mixins.responsive(md) {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+    }
+  }
+  
+  &__image {
+    width: 100%;
+    height: 200px;
+    background-color: var(--surface-color);
+    @include mixins.flexCenter;
+    overflow: hidden;
+    
+    @include mixins.responsive(md) {
+      height: 220px;
+    }
+    
+    @include mixins.responsive(lg) {
+      height: 240px;
+    }
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  
+  &__content {
+    @include mixins.flexColumn;
+    flex: 1;
+    padding: var(--spacing-lg);
+    
+    @include mixins.responsive(md) {
+      padding: var(--spacing-xl);
+    }
+  }
+  
+  &__title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary-color);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.3;
+    
+    @include mixins.responsive(md) {
+      font-size: var(--font-size-xl);
+    }
+  }
+  
+  &__description {
+    color: var(--text-secondary-color);
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+    margin-bottom: var(--spacing-md);
+    flex: 1;
+  }
+  
+  &__price {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  &__actions {
+    @include mixins.flexBetween;
+    gap: var(--spacing-sm);
+  }
+  
+  &__addToCart {
+    @include mixins.flexCenter;
+    flex: 1;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    
+    &:hover {
+      background-color: #1d4ed8;
+    }
+  }
+}

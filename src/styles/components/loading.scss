@@ -1,0 +1,37 @@
+@use '../mixins' as mixins;
+
+.loading
+{
+    @include mixins.flexCenter;
+    padding: var(--spacing-2xl);
+
+    &__spinner
+    {
+        width: 2rem;
+        height: 2rem;
+        border: 2px solid var(--border-color);
+        border-top: 2px solid var(--primary-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    &__text
+    {
+        margin-top: var(--spacing-md);
+        color: var(--text-secondary-color);
+        font-size: var(--font-size-sm);
+    }
+}
+
+@keyframes spin
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}

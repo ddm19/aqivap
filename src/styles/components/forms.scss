@@ -1,0 +1,63 @@
+@use '../mixins' as mixins;
+
+.form {
+  @include mixins.flexColumn;
+  gap: var(--spacing-lg);
+  
+  &__group {
+    @include mixins.flexColumn;
+    gap: var(--spacing-sm);
+  }
+  
+  &__label {
+    font-weight: var(--font-weight-medium);
+    color: var(--text-primary-color);
+    font-size: var(--font-size-sm);
+  }
+  
+  &__input {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-base);
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    
+    &:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgb(37 99 235 / 0.1);
+    }
+    
+    &--error {
+      border-color: var(--error-color);
+      
+      &:focus {
+        border-color: var(--error-color);
+        box-shadow: 0 0 0 3px rgb(239 68 68 / 0.1);
+      }
+    }
+  }
+  
+  &__textarea {
+    @extend .form__input;
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  &__select {
+    @extend .form__input;
+    cursor: pointer;
+  }
+  
+  &__error {
+    color: var(--error-color);
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-xs);
+  }
+  
+  &__actions {
+    @include mixins.flexCenter;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+} 
