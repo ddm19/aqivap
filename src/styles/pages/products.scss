@@ -1,49 +1,59 @@
 @use '../mixins' as mixins;
 
-.productsPage {
+.productsPage
+{
   padding: var(--spacing-2xl) 0;
-  
-  &__header {
+
+  &__header
+  {
     text-align: center;
     margin-bottom: var(--spacing-2xl);
   }
-  
-  &__title {
+
+  &__title
+  {
     font-size: var(--font-size-3xl);
     font-weight: var(--font-weight-bold);
     color: var(--text-primary-color);
     margin-bottom: var(--spacing-md);
   }
-  
-  &__subtitle {
+
+  &__subtitle
+  {
     color: var(--text-secondary-color);
     font-size: var(--font-size-lg);
   }
-  
-  &__filters {
+
+  &__filters
+  {
     margin-bottom: var(--spacing-xl);
   }
-  
-  &__grid {
+
+  &__grid
+  {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
-    
-    @include mixins.responsive(md) {
-      grid-template-columns: repeat(2, 1fr);
+
+    @include mixins.responsive(md)
+    {
+      grid-template-columns: repeat(3, 1fr);
       gap: var(--spacing-xl);
     }
-    
-    @include mixins.responsive(lg) {
-      grid-template-columns: repeat(3, 1fr);
+
+    @include mixins.responsive(lg)
+    {
+      grid-template-columns: repeat(5, 1fr);
     }
-    
-    @include mixins.responsive(xl) {
-      grid-template-columns: repeat(4, 1fr);
+
+    @include mixins.responsive(xl)
+    {
+      grid-template-columns: repeat(6, 1fr);
     }
   }
-  
-  &__pagination {
+
+  &__pagination
+  {
     margin-top: var(--spacing-2xl);
     text-align: center;
   }
