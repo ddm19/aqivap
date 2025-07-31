@@ -1,9 +1,21 @@
 @use '../mixins' as mixins;
 
 .footer {
-  background-color: var(--text-primary-color);
-  color: white;
+  background: var(--background-color);
+  color: var(--text-primary-color);
   padding: var(--spacing-xl) 0;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  }
   
   @include mixins.responsive(md) {
     padding: var(--spacing-2xl) 0;
@@ -12,6 +24,8 @@
   &__container {
     @include mixins.flexColumn;
     gap: var(--spacing-lg);
+    position: relative;
+    z-index: 1;
     
     @include mixins.responsive(md) {
       flex-direction: row;
@@ -34,29 +48,50 @@
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-semibold);
     margin-bottom: var(--spacing-sm);
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
   }
   
   &__link {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-secondary-color);
     text-decoration: none;
-    transition: color 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent-color);
+      transition: width 0.3s ease-in-out;
+    }
     
     &:hover {
-      color: white;
+      color: var(--accent-color);
+      text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+      
+      &::after {
+        width: 100%;
+      }
     }
   }
   
   &__text {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-secondary-color);
     line-height: 1.6;
   }
   
   &__bottom {
     margin-top: var(--spacing-xl);
     padding-top: var(--spacing-lg);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--border-color);
     text-align: center;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--text-muted);
+    position: relative;
+    z-index: 1;
     
     @include mixins.responsive(md) {
       text-align: left;

@@ -6,38 +6,71 @@ $breakpoint-xl: 1280px;
 $breakpoint-2xl: 1536px;
 
 // Mixins
-@mixin flexCenter {
+@mixin flexCenter
+{
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-@mixin flexBetween {
+@mixin flexBetween
+{
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-@mixin flexColumn {
+@mixin flexColumn
+{
   display: flex;
   flex-direction: column;
 }
 
-@mixin responsive($breakpoint) {
-  @if $breakpoint == sm {
-    @media (min-width: $breakpoint-sm) { @content; }
-  } @else if $breakpoint == md {
-    @media (min-width: $breakpoint-md) { @content; }
-  } @else if $breakpoint == lg {
-    @media (min-width: $breakpoint-lg) { @content; }
-  } @else if $breakpoint == xl {
-    @media (min-width: $breakpoint-xl) { @content; }
-  } @else if $breakpoint == 2xl {
-    @media (min-width: $breakpoint-2xl) { @content; }
+@mixin responsive($breakpoint)
+{
+  @if $breakpoint ==sm
+  {
+    @media (min-width: $breakpoint-sm)
+    {
+      @content;
+    }
+  }
+
+  @else if $breakpoint ==md
+  {
+    @media (min-width: $breakpoint-md)
+    {
+      @content;
+    }
+  }
+
+  @else if $breakpoint ==lg
+  {
+    @media (min-width: $breakpoint-lg)
+    {
+      @content;
+    }
+  }
+
+  @else if $breakpoint ==xl
+  {
+    @media (min-width: $breakpoint-xl)
+    {
+      @content;
+    }
+  }
+
+  @else if $breakpoint ==2xl
+  {
+    @media (min-width: $breakpoint-2xl)
+    {
+      @content;
+    }
   }
 }
 
-@mixin buttonBase {
+@mixin buttonBase
+{
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -48,14 +81,17 @@ $breakpoint-2xl: 1536px;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  
-  &:disabled {
+  padding: var(--spacing-sm) var(--spacing-md);
+
+  &:disabled
+  {
     opacity: 0.5;
     cursor: not-allowed;
   }
 }
 
-@mixin cardBase {
+@mixin cardBase
+{
   background-color: var(--background-color);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-md);

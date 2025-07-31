@@ -1,102 +1,170 @@
 @use '../mixins' as mixins;
 
-.productCard {
+.productCard
+{
   @include mixins.cardBase;
   @include mixins.flexColumn;
   height: 100%;
-  
-  @include mixins.responsive(md) {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-xl);
-    }
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+
+  &::before
+  {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
   }
-  
-  &__image {
-    width: 100%;
-    height: 200px;
-    background-color: var(--surface-color);
-    @include mixins.flexCenter;
-    overflow: hidden;
-    
-    @include mixins.responsive(md) {
-      height: 220px;
-    }
-    
-    @include mixins.responsive(lg) {
-      height: 240px;
-    }
-    
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease-in-out;
-      
-      &:hover {
-        transform: scale(1.05);
+
+  @include mixins.responsive(md)
+  {
+    transition: all 0.3s ease-in-out;
+
+    &:hover
+    {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      border-color: var(--accent-color);
+      background: var(--surface-secondary);
+
+      &::before
+      {
+        height: 5px;
       }
     }
   }
-  
-  &__content {
+
+  &__image
+  {
+    width: 100%;
+    height: 200px;
+    background: var(--surface-secondary);
+    @include mixins.flexCenter;
+    overflow: hidden;
+    position: relative;
+
+    @include mixins.responsive(md)
+    {
+      height: 220px;
+    }
+
+    @include mixins.responsive(lg)
+    {
+      height: 240px;
+    }
+
+    img
+    {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.3s ease-in-out;
+
+      &:hover
+      {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__content
+  {
     @include mixins.flexColumn;
     flex: 1;
     padding: var(--spacing-lg);
-    
-    @include mixins.responsive(md) {
+
+    @include mixins.responsive(md)
+    {
       padding: var(--spacing-xl);
     }
   }
-  
-  &__title {
+
+  &__title
+  {
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-semibold);
     color: var(--text-primary-color);
     margin-bottom: var(--spacing-sm);
     line-height: 1.3;
-    
-    @include mixins.responsive(md) {
+
+    @include mixins.responsive(md)
+    {
       font-size: var(--font-size-xl);
     }
   }
-  
-  &__description {
+
+  &__description
+  {
     color: var(--text-secondary-color);
     font-size: var(--font-size-sm);
     line-height: 1.5;
     margin-bottom: var(--spacing-md);
     flex: 1;
   }
-  
-  &__price {
+
+  &__price
+  {
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
-    color: var(--primary-color);
+    color: var(--accent-color);
     margin-bottom: var(--spacing-md);
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
   }
-  
-  &__actions {
+
+  &__actions
+  {
     @include mixins.flexBetween;
     gap: var(--spacing-sm);
   }
-  
-  &__addToCart {
+
+  &__addToCart
+  {
     @include mixins.flexCenter;
     flex: 1;
     padding: var(--spacing-sm) var(--spacing-md);
-    background-color: var(--primary-color);
-    color: white;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: var(--text-primary-color);
     border: none;
     border-radius: var(--border-radius-md);
     font-weight: var(--font-weight-medium);
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    
-    &:hover {
-      background-color: #1d4ed8;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+
+    &::before
+    {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    &:hover
+    {
+      background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-light) 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(253, 46, 18, 0.4);
+
+      &::before
+      {
+        left: 100%;
+      }
+    }
+
+    &:active
+    {
+      transform: translateY(0);
+      box-shadow: 0 2px 10px rgba(253, 46, 18, 0.3);
     }
   }
 }

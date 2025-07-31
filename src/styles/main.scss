@@ -20,19 +20,41 @@
 // CSS Custom Properties (Variables)
 :root
 {
-    // Colors
-    --primary-color: #2563eb;
-    --secondary-color: #64748b;
-    --accent-color: #f59e0b;
+    // Colors - AQVAP Brand Colors
+    --primary-color: #fd2e12; // Rojo principal de AQVAP
+    --primary-dark: #d4241a; // Rojo más oscuro para gradientes
+    --primary-light: #ff4d33; // Rojo más claro para acentos
+
+    --secondary-color: #c0c0c0; // Plateado metálico
+    --secondary-dark: #a0a0a0; // Plateado más oscuro
+    --secondary-light: #e0e0e0; // Plateado más claro
+
+    --accent-color: #ff6b35; // Naranja para contornos y acentos
+    --accent-dark: #e55a2b; // Naranja más oscuro
+    --accent-light: #ff8c5a; // Naranja más claro
+
     --success-color: #10b981;
     --error-color: #ef4444;
     --warning-color: #f97316;
 
-    --background-color: #ffffff;
-    --surface-color: #f8fafc;
-    --text-primary-color: #1e293b;
-    --text-secondary-color: #64748b;
-    --border-color: #e2e8f0;
+    // Background gradients - Dark theme
+    --background-color: #0a0a0a; // Fondo principal muy oscuro
+    --background-secondary: #111111; // Fondo secundario oscuro
+    --background-tertiary: #1a1a1a; // Fondo terciario para secciones
+    --background-gradient: linear-gradient(135deg, #0a0a0a 0%, #111111 50%, #1a1a1a 100%);
+
+    --surface-color: #1e1e1e; // Superficies oscuras
+    --surface-secondary: #2a2a2a; // Superficies secundarias
+    --surface-elevated: #333333; // Superficies elevadas
+
+    --text-primary-color: #ffffff; // Texto principal blanco
+    --text-secondary-color: #b0b0b0; // Texto secundario gris claro
+    --text-muted: #808080; // Texto atenuado
+    --text-dark: #1a1a1a; // Texto oscuro para fondos claros
+
+    --border-color: rgba(255, 255, 255, 0.1); // Bordes sutiles
+    --border-accent: var(--accent-color); // Bordes con acento naranja
+    --border-secondary: rgba(192, 192, 192, 0.2); // Bordes plateados
 
     // Typography
     --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -70,10 +92,10 @@
     --border-radius-2xl: 1rem;
 
     // Shadows
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.5);
 
     // Breakpoints
     --breakpoint-sm: 640px;
@@ -158,6 +180,27 @@ body
     font-size: var(--font-size-sm);
     line-height: 1.5;
     color: var(--text-secondary-color);
+}
+
+// Clases adicionales para AQVAP
+.textAccent
+{
+    color: var(--accent-color);
+    font-weight: var(--font-weight-semibold);
+}
+
+.textMetallic
+{
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px rgba(192, 192, 192, 0.3);
+}
+
+.brandGradient
+{
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 50%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 // Utility classes

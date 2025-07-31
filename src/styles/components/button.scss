@@ -1,56 +1,115 @@
-@use '../mixins' as mixins;
+@use '@styles/mixins';
 
 .button
 {
   @include mixins.buttonBase;
 
-  // Primary button
+  // Primary button - AQVAP Red
   &--primary
   {
-    background-color: var(--primary-color);
-    color: white;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    color: var(--text-primary-color);
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(253, 46, 18, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 
     &:hover:not(:disabled)
     {
-      background-color: #1d4ed8;
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent-color) 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(253, 46, 18, 0.4);
+    }
+
+    &:active:not(:disabled)
+    {
+      transform: translateY(0);
+      box-shadow: 0 2px 10px rgba(253, 46, 18, 0.3);
     }
   }
 
-  // Secondary button
+  // Secondary button - Dark Metallic
   &--secondary
   {
-    background-color: var(--secondary-color);
-    color: white;
+    background: var(--surface-secondary);
+    color: var(--text-primary-color);
+    border: 1px solid var(--border-secondary);
+    box-shadow: var(--shadow-md);
 
     &:hover:not(:disabled)
     {
-      background-color: #475569;
+      background: var(--surface-elevated);
+      border-color: var(--secondary-color);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    &:active:not(:disabled)
+    {
+      transform: translateY(0);
+      box-shadow: var(--shadow-md);
     }
   }
 
-  // Outline button
+  // Outline button - Orange Accent
   &--outline
   {
     background-color: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    position: relative;
+    overflow: hidden;
+
+    &::before
+    {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+      transition: left 0.5s;
+    }
 
     &:hover:not(:disabled)
     {
-      background-color: var(--primary-color);
-      color: white;
+      background: var(--accent-color);
+      color: var(--text-primary-color);
+      border-color: var(--accent-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
+
+      &::before
+      {
+        left: 100%;
+      }
+    }
+
+    &:active:not(:disabled)
+    {
+      transform: translateY(0);
+      box-shadow: 0 2px 10px rgba(255, 107, 53, 0.3);
     }
   }
 
-  // Ghost button
+  // Ghost button - Transparent with hover effects
   &--ghost
   {
     background-color: transparent;
-    color: var(--text-primary-color);
+    color: var(--text-secondary-color);
+    border: 1px solid transparent;
 
     &:hover:not(:disabled)
     {
-      background-color: var(--surface-color);
+      background: var(--surface-color);
+      border-color: var(--border-color);
+      color: var(--text-primary-color);
+      transform: translateY(-1px);
+    }
+
+    &:active:not(:disabled)
+    {
+      transform: translateY(0);
     }
   }
 
