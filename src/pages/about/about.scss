@@ -1,0 +1,60 @@
+@use '../../styles/mixins.scss' as mixins;
+
+.aboutPage {
+  padding: var(--spacing-2xl) 0;
+
+  &__header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  &__title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary-color);
+    margin-bottom: var(--spacing-md);
+  }
+
+  &__subtitle {
+    color: var(--text-secondary-color);
+    font-size: var(--font-size-lg);
+  }
+
+  &__content {
+    @include mixins.flexColumn;
+    gap: var(--spacing-2xl);
+  }
+
+  &__section {
+    @include mixins.flexColumn;
+    gap: var(--spacing-lg);
+
+    @include mixins.responsive(md) {
+      flex-direction: row;
+      align-items: center;
+      gap: var(--spacing-2xl);
+    }
+  }
+
+  &__text {
+    color: var(--text-secondary-color);
+    line-height: 1.7;
+  }
+
+  &__image {
+    @include mixins.flexCenter;
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius-lg);
+    min-height: 200px;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--border-radius-lg);
+    }
+
+    @include mixins.responsive(md) {
+      min-height: 300px;
+    }
+  }
+}

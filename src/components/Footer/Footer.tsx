@@ -17,9 +17,10 @@ const Footer: React.FC = () => (
       </div>
       <div className="footer__section">
         <h3 className="footer__title">Síguenos</h3>
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="footer__link">Facebook</a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="footer__link">Instagram</a>
-        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="footer__link">Twitter</a>
+        <a href="https://www.facebook.com/antoniojose.gutierrezbernal.5/?locale=es_ES" target="_blank" rel="noopener noreferrer" className="footer__link">Facebook</a>
+        <a href="https://www.instagram.com/aqivap/?hl=es" target="_blank" rel="noopener noreferrer" className="footer__link">Instagram</a>
+        <a href="https://x.com/antonio61680959" target="_blank" rel="noopener noreferrer" className="footer__link">X</a>
+        <a href="https://www.tiktok.com/@aqivap" target="_blank" rel="noopener noreferrer" className="footer__link">TikTok</a>
       </div>
     </div>
     <div className="footer__bottom">© {new Date().getFullYear()} Aqivap</div>

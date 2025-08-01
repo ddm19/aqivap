@@ -39,7 +39,7 @@ const HomePage: React.FC = () => {
               price: '39,99 €',
               image: 'modtank.jpg',
             }].map((offer, idx) => (
-              <div key={idx} className="card card--grid">
+              <div key={idx} className="card card--grid" onClick={() => navigate('/product/1')}>
                 <div className="card__media">
                   <div className="homePage__productImage">
                     <img src={offer.image} alt={offer.title} className="homePage__productImage" />
@@ -117,7 +117,7 @@ const HomePage: React.FC = () => {
               image: 'https://siemprevapor.com/7513-large_default/vintage-juliet-100ml-blackout.jpg',
 
             }].map((prod, i) => (
-              <div key={i} className="card card--grid">
+              <div key={i} className="card card--grid" onClick={() => navigate('/product/1')}>
                 <div className="card__media">
                   <div className="homePage__productImage">
                     <img src={prod.image} alt={prod.title} className="homePage__productImage" />
