@@ -47,6 +47,12 @@
     border-radius: var(--border-radius-lg);
     min-height: 200px;
 
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--border-radius-lg);
+    }
+
     @include mixins.responsive(md) {
       min-height: 300px;
     }

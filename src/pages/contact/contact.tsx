@@ -29,7 +29,14 @@ const ContactPage: React.FC = () => (
         <div className="contactPage__info">
           <div className="contactPage__contactItem">
             <span>Dirección:</span>
-            <span>Gta. de Tomás Ramírez, 6, 03010 Alicante</span>
+            <a
+              href="https://www.google.com/maps?q=Gta.+de+Tom%C3%A1s+Ram%C3%ADrez,+6,+03010+Alicante"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer__link"
+            >
+              Gta. de Tomás Ramírez, 6, 03010 Alicante
+            </a>
           </div>
           <div className="contactPage__contactItem">
             <a href="https://www.instagram.com/aqivap/?hl=es" className="footer__link" target="_blank" rel="noopener noreferrer">Instagram</a>

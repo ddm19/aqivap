@@ -18,8 +18,15 @@ const AboutPage: React.FC = () => (
               cliente encuentre la mejor opción para sus necesidades.
             </p>
             <p>
-              Nos puedes visitar en Gta. de Tomás Ramírez, 6, 03010 Alicante,
-              donde te espera un trato cercano y profesional.
+              Nos puedes visitar en{' '}
+              <a
+                href="https://www.google.com/maps?q=Gta.+de+Tom%C3%A1s+Ram%C3%ADrez,+6,+03010+Alicante"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Gta. de Tomás Ramírez, 6, 03010 Alicante
+              </a>
+              , donde te espera un trato cercano y profesional.
             </p>
           </div>
           <div className="aboutPage__image">
