@@ -38,8 +38,15 @@ const HomePage: React.FC = () => {
               subtitle: 'Potencia ajustable y pantalla OLED',
               price: '39,99 €',
               image: 'modtank.jpg',
-            }].map((offer, idx) => (
-              <div key={idx} className="card card--grid" onClick={() => navigate('/product/1')}>
+            },
+            {
+              title: 'Kit Inicio Aqivap',
+              subtitle: 'Dispositivo + líquido 10ml',
+              price: '29,99 €',
+              image: 'kitinicio.jpg',
+            },
+            ].map((offer, idx) => (
+              <div key={idx} className="card card--grid homePage__categoryCard" onClick={() => navigate('/product/1')}>
                 <div className="card__media">
                   <div className="homePage__productImage">
                     <img src={offer.image} alt={offer.title} className="homePage__productImage" />
