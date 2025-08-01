@@ -7,6 +7,7 @@ import HomePage from './pages/home/home'
 import ProductsPage from 'pages/products/products'
 import ProductDetailPage from 'pages/productDetail/productDetail'
 import ContactPage from 'pages/contact/contact'
+import AboutPage from 'pages/about/about'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 
@@ -27,7 +28,7 @@ const App: React.FC = () => {
             <Route path="/product/:id" element={<ProductDetailPage />} />
             <Route path="/cart" element={<div>Cart Page (Coming Soon)</div>} />
             <Route path="/checkout" element={<div>Checkout Page (Coming Soon)</div>} />
-            <Route path="/about" element={<div>About Page (Coming Soon)</div>} />
+            <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </main>
